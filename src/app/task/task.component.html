@@ -1,0 +1,15 @@
+<div class="task-container">
+    <h2>タスク管理</h2>
+
+    <input [(ngModel)]="newTask" placeholder="タスクを入力" />
+    <button (click)="addTask()">追加</button>
+
+    <ul>
+        @for (task of tasks; track $index) {
+            <li>
+               {{ task }}
+               <button (click)="removeTask($index)">削除</button> 
+            </li>
+        }
+    </ul>
+</div>
